@@ -64,7 +64,7 @@ Metrics below are derived from the JSON summaries created after the training pro
 
 | Experiment | Model | D_MODEL | N_HEADS | NUM_LAYERS | DIM_FF | DROPOUT | Weight Decay | Best Val Acc | Best Epoch |
 |------------|-------|---------|---------|------------|--------|---------|--------------|--------------|------------|
-| `debug` | MLPBaseline | — | — | — | — | 0.3 | 1e-4 | 0.792 | 18 |
+| `baseline` | MLPBaseline | — | — | — | — | 0.3 | 1e-4 | 0.792 | 18 |
 | `transformer_d128_h2_l2_do01` | PoseTransformer | 128 | 2 | 2 | 256 | 0.1 | 1e-4 | **0.814** | 10 |
 | `transformer_d192_h4_l3_do02` | PoseTransformer | 192 | 4 | 3 | 512 | 0.2 | 1e-4 | 0.792 | 20 |
 | `transformer_d256_h4_l4_do03` | PoseTransformer | 256 | 4 | 4 | 768 | 0.3 | 1e-4 | 0.792 | 8 |
@@ -81,8 +81,6 @@ Full-class runs (all 101 classes; no class limit):
 Key observations:
 - The best Transformer (`transformer_d128_h2_l2_do01`) improves validation accuracy by **~+2.2 points** over the baseline (0.814 vs. 0.792).
 - Mid-size and larger Transformers (192/256 dims) matched the baseline at ~0.792; higher capacity without extra regularization or data did not improve further on this 5-class subset.
-- Validation plateaus occurred earlier for the best run (epoch 10) than for others, suggesting the smaller model converges faster.
-- If available, training/validation curves and confusion matrices for the best Transformer can be reviewed in `figures/` (e.g., `figures/transformer_loss_curves.png`, `figures/confusion_transformer.png`).
 
 ## Model Improvements: What Changed and Why It Worked
 ### Change 1 – Light vs. mid-size capacity (D_MODEL 128 vs. 192/256)
