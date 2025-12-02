@@ -17,7 +17,6 @@ class UCFSkeletonDataset(Dataset):
         pkl_path,
         split_name="train1",
         T=60,
-        augment=False,
         person_strategy="max_score",
         allowed_labels=None,
     ):
@@ -26,7 +25,6 @@ class UCFSkeletonDataset(Dataset):
         """
         self.pkl_path = Path(pkl_path)
         self.T = T
-        self.augment = augment
         self.person_strategy = person_strategy
 
         with open(self.pkl_path, "rb") as f:
