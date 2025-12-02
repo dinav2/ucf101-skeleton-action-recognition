@@ -20,7 +20,7 @@ This project tackles human action recognition on the UCF101 dataset using 2D ske
 - `src/visualize_all.py`: Visualization utilities (confusion matrix, t-SNE, attention) for a given Transformer checkpoint.
 - `src/config.py`: Hyperparameters and paths (`PKL_PATH`, `EXPERIMENTS_DIR`, `FIGURES_DIR`, batch size, epochs, Transformer dims/dropout, etc.).
 - `experiments/`: One folder per run with `metrics.json` and `summary.json` (best checkpoint path, best val accuracy, best epoch). `transformer_results.json` aggregates grid runs.
-- `figures/`: Optional plots (loss/accuracy curves, confusion matrices, attention maps).
+- `figures/`: Plots already checked into the repo (loss/accuracy curves, confusion matrices, attention maps) so they can be viewed directly.
 
 ## Models
 ### Baseline: `MLPBaseline`
